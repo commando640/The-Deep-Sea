@@ -2011,17 +2011,11 @@
 
 <script>
 // ===== LOADING SCREEN =====
-function hideLoadingScreen() {
+window.addEventListener('load', () => {
   setTimeout(() => {
     document.getElementById('loading-screen').classList.add('hidden');
   }, 2200);
-}
-// Use DOMContentLoaded as primary trigger (doesn't wait for external fonts/resources)
-document.addEventListener('DOMContentLoaded', hideLoadingScreen);
-// Hard fallback: force hide after 4 seconds no matter what
-setTimeout(() => {
-  document.getElementById('loading-screen').classList.add('hidden');
-}, 4000);
+});
 
 // ===== HAMBURGER MOBILE NAV =====
 const hamburger = document.getElementById('hamburger');
